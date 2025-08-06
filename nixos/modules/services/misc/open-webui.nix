@@ -89,10 +89,10 @@ in
       after = [ "network.target" ];
 
       environment = {
-        STATIC_DIR = ".";
-        DATA_DIR = ".";
-        HF_HOME = ".";
-        SENTENCE_TRANSFORMERS_HOME = ".";
+        STATIC_DIR = "${cfg.statedir}/static";
+        DATA_DIR = "${cfg.statedir}/data";
+        HF_HOME = "${cfg.statedir}/hf_home";
+        SENTENCE_TRANSFORMERS_HOME = "${cfg.statedir}/transformers_home";
         WEBUI_URL = "http://localhost:${toString cfg.port}";
       }
       // cfg.environment;
